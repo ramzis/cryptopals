@@ -26,7 +26,7 @@ def single_byte_xor_cypher(byte_text):
     rs = []
     for key in range(256):
         m = cycle_xor(byte_text, bytes([key]))
-        rs.append((m, bhattacharyya_coeff(m)))
+        rs.append((m, bhattacharyya_coeff(m), bytes([key])))
     return sorted(rs, key=lambda r: r[1], reverse=True)
 
 
